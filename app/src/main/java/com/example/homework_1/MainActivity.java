@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     final static int DISPLAY_CODE = 3;
 
     static ArrayList<Contact> contacts = new ArrayList<>();
+    final static String CONTACTS_LIST_KEY = "CONTACTS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
                 //Start an intent to the second activity and pass the student info through
                 Intent intent = new Intent(MainActivity.this, CreateContact.class);
                 startActivityForResult(intent, CREATE_CODE);
+            }
+        });
+
+        findViewById(R.id.contact_display_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Start an intent to the second activity and pass the student info through
+                Intent intent = new Intent(MainActivity.this, DisplayContacts.class);
+                intent.putExtra(CONTACTS_LIST_KEY, contacts);
+                startActivity(intent);
             }
         });
     }

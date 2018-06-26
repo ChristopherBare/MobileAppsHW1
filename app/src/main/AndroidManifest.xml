@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateContact"></activity>
+        <activity android:name=".CreateContact" />
+        <activity android:name=".DisplayContacts"></activity>
     </application>
 
 </manifest>

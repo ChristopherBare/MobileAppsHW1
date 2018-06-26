@@ -44,7 +44,12 @@ public class CreateContact extends AppCompatActivity {
                 //Ensure that all fields contain data
                 if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || phone.getText().toString().isEmpty())
                     Toast.makeText(getApplicationContext(), "First three fields are required", Toast.LENGTH_LONG).show();
-                else {
+
+                //Validate phone number
+                if (phone.getText().toString().length() > 10) {
+                    Toast.makeText(getApplicationContext(), "Please enter a valid phone number", Toast.LENGTH_LONG).show();
+
+                } else {
                     //Set fields to values from page elements
                     firstNameString = firstName.getText().toString();
                     lastNameString = lastName.getText().toString();
@@ -73,8 +78,8 @@ public class CreateContact extends AppCompatActivity {
                     intent.putExtra(CONTACT_KEY, contact);
                     intent.putExtra(MainActivity.CREATE_KEY, true);
                     startActivity(intent);
+                    finish();
                 }
-                finish();
             }
         });
     }
