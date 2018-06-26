@@ -54,7 +54,17 @@ public class MainActivity extends AppCompatActivity {
                 if (getIntent().getExtras().getBoolean(MainActivity.CREATE_KEY) == true) {
                     Contact contact = (Contact) getIntent().getExtras().getSerializable(CONTACT_KEY);
                     contacts.add(contact);
-                    setTitle("Contacts (" + contacts.size() + ")");
+                }
+
+                //Contact is being edited
+                if (getIntent().getExtras().getBoolean(MainActivity.EDIT_KEY) == true) {
+                    Contact toRemove = null;
+                    Contact contact = (Contact) getIntent().getExtras().getSerializable(CONTACT_KEY);
+                    for (Contact c : contacts)
+                        if (c.getPhone().equals(getIntent().getExtras().get(CreateContact.CONTACT_ID)))
+                            toRemove = c;
+                    contacts.remove(toRemove);
+                    contacts.add(contact);
                 }
             }
         }
@@ -69,6 +79,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //Edit contact
+        findViewById(R.id.contact_edit_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Start an intent to the second activity and pass the student info through
+                Intent intent = new Intent(MainActivity.this, DisplayContacts.class);
+                intent.putExtra(EDIT_KEY, true);
+                startActivity(intent);
+            }
+        });
+
 
         //Delete contact
         findViewById(R.id.contact_delete_button).setOnClickListener(new View.OnClickListener() {

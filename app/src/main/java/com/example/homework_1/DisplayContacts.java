@@ -44,6 +44,12 @@ public class DisplayContacts extends AppCompatActivity {
                     if (c.getPhone().equals(phone)) {
                         if (getIntent().getExtras().getBoolean(MainActivity.DELETE_KEY) == true) {
                             toRemove = c;
+                        }
+                        else if (getIntent().getExtras().getBoolean(MainActivity.EDIT_KEY) == true) {
+                            Intent intent = new Intent(DisplayContacts.this, CreateContact.class);
+                            intent.putExtra(MainActivity.CONTACT_KEY, c);
+                            intent.putExtra(MainActivity.EDIT_KEY, true);
+                            startActivity(intent);
                         } else {
                             Intent intent = new Intent(DisplayContacts.this, ContactDetails.class);
                             intent.putExtra(MainActivity.CONTACT_KEY, c);
