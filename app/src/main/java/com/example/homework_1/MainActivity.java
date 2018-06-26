@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Check to see if information is being sent
         if(getIntent() != null){
-            //Make sure the intent has extras before trying to access them
+            //Make sure the intent has extras before trying to access them because that sucks
             if (getIntent().getExtras() != null) {
 
                 //Contact is being created
