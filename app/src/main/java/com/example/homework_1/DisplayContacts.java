@@ -42,6 +42,6 @@ public class DisplayContacts extends AppCompatActivity {
         itemList.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
-//        setListAdapter(adapter);
     }
 }
+
