@@ -26,4 +26,5 @@
     <string name="placeholder_name">Contact Name</string>
     <string name="placeholder_phone">(123) 456-7890</string>
     <string name="hint_links">Links</string>
+    <string name="string_blank">Blank</string>
 </resources>
