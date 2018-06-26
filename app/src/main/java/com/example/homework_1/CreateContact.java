@@ -135,9 +135,11 @@ public class CreateContact extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.i(TAG, "onActivityResult: You're in the method.");
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+            Log.i(TAG, "onActivityResult: " + image.toString());
             image.setImageBitmap(imageBitmap);
         }
     }
