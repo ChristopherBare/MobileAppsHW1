@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/upload_image_icon" />
+        app:srcCompat="@drawable/ic_add_a_photo_black_24dp" />
 
     <TextView
         android:id="@+id/details_name"
