@@ -1,20 +1,25 @@
 package com.example.homework_1;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Camera;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class CreateContact extends AppCompatActivity {
 
-    final static String CONTACT_KEY = "CONTACT";
+    static final String CONTACT_KEY = "CONTACT";
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     private String firstNameString;
     private String lastNameString;
     private String phoneString;
-
+    private ImageView image;
     private Contact contact;
 
     @Override
@@ -40,6 +45,7 @@ public class CreateContact extends AppCompatActivity {
                 EditText twitter = (EditText) findViewById(R.id.edit_Twitter);
                 EditText skype = (EditText) findViewById(R.id.edit_Skype);
                 EditText youtube = (EditText) findViewById(R.id.edit_YouTube);
+                image = (ImageView) findViewById(R.id.item_image);
 
                 //Ensure that all fields contain data
                 if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || phone.getText().toString().isEmpty())
@@ -73,6 +79,8 @@ public class CreateContact extends AppCompatActivity {
                     if (!skype.getText().toString().isEmpty()) contact.setSkype(skype.getText().toString());
                     if (!youtube.getText().toString().isEmpty()) contact.setYoutube(youtube.getText().toString());
 
+
+
                     //Start an intent to the second activity and pass the student info through
                     Intent intent = new Intent(CreateContact.this, MainActivity.class);
                     intent.putExtra(CONTACT_KEY, contact);
@@ -83,4 +91,24 @@ public class CreateContact extends AppCompatActivity {
             }
         });
     }
+
+
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            image.setImageBitmap(imageBitmap);
+        }
+    }
+
+
 }
