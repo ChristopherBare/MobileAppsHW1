@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.contact_create_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Start an intent to the second activity and pass the student info through
+                //Start an intent to the create contact activity
                 Intent intent = new Intent(MainActivity.this, CreateContact.class);
                 intent.putExtra(CREATE_KEY, true);
                 startActivity(intent);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.contact_edit_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Start an intent to the second activity and pass the student info through
+                //Start an intent to the display contact activity
                 Intent intent = new Intent(MainActivity.this, DisplayContacts.class);
                 intent.putExtra(EDIT_KEY, true);
                 startActivity(intent);
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.contact_delete_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Start an intent to the second activity and pass the student info through
+                //Start an intent to the display contact activity
                 Intent intent = new Intent(MainActivity.this, DisplayContacts.class);
                 intent.putExtra(DELETE_KEY, true);
 //                startActivityForResult(intent, DELETE_CODE);
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.contact_display_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Start an intent to the second activity and pass the student info through
+                //Start an intent to the display contact activity
                 Intent intent = new Intent(MainActivity.this, DisplayContacts.class);
                 intent.putExtra(CONTACTS_LIST_KEY, contacts);
                 startActivity(intent);
