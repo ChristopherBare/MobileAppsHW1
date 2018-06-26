@@ -22,7 +22,7 @@
         android:id="@+id/item_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/upload_image_icon"
+        android:background="@drawable/ic_person_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
         <!--app:srcCompat="@drawable/avatar_f_1" -->
