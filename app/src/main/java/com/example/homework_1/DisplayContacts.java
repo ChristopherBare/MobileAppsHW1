@@ -40,7 +40,6 @@ public class DisplayContacts extends AppCompatActivity {
                 TextView textView = (TextView) view.findViewById(R.id.item_phone);
                 String phone = textView.getText().toString();
                 Contact toRemove = null;
-                boolean confirmRemove = false;
 
                 for(Contact c: contacts) {
                     if (c.getPhone().equals(phone)) {
