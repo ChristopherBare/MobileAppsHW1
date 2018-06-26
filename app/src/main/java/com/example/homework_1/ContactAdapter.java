@@ -1,6 +1,9 @@
 package com.example.homework_1;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,7 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
         super(context, resource, objects);
     }
 
+    @SuppressLint("ViewHolder")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Contact contact = getItem(position);
@@ -29,7 +33,11 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
         //set the data from the contact object
         item_name.setText(contact.getFirstName() + " " + contact.getLastName());
         item_phone.setText(contact.getPhone());
-        item_image.setImageBitmap(contact.getImage());
+        if (contact.getImage()!=null){
+            byte[] image_data = contact.getImage();
+            Bitmap bitmap = BitmapFactory.decodeByteArray(image_data, 0, image_data.length);
+            item_image.setImageBitmap(bitmap);
+        }
 
         return convertView;
     }

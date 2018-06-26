@@ -19,7 +19,7 @@ public class Contact implements Serializable {
     private String twitter;
     private String skype;
     private String youtube;
-    private Bitmap image;
+    private byte[] image;
 
     public Contact() {
         this.firstName = "";
@@ -40,7 +40,7 @@ public class Contact implements Serializable {
 
     public Contact(String firstName, String lastName, String phone, String company, String email,
                    String url, String address, String birthday, String nickname, String facebook,
-                   String twitter, String skype, String youtube, Bitmap image) {
+                   String twitter, String skype, String youtube, byte[] image) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -161,7 +161,7 @@ public class Contact implements Serializable {
         this.youtube = youtube;
     }
 
-    public Bitmap getImage() { return image; }
+    public byte[] getImage() { return image; }
 
-    public void setImage(Bitmap image) { this.image = image; }
+    public void setImage(byte[] image) { this.image = image; }
 }

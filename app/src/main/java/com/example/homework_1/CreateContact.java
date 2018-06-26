@@ -2,6 +2,7 @@ package com.example.homework_1;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Camera;
 import android.graphics.drawable.BitmapDrawable;
 import android.provider.MediaStore;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 
 public class CreateContact extends AppCompatActivity {
 
@@ -63,7 +66,11 @@ public class CreateContact extends AppCompatActivity {
             twitter.setText(contact.getTwitter());
             skype.setText(contact.getSkype());
             youtube.setText(contact.getYoutube());
-            if(contact.getImage()!=null) image.setImageBitmap(contact.getImage());
+            if(contact.getImage()!=null){
+                byte[] image_data = contact.getImage();
+                Bitmap bitmap = BitmapFactory.decodeByteArray(image_data, 0, image_data.length);
+                image.setImageBitmap(bitmap);
+            }
 
             oldPhone = contact.getPhone();
         }
@@ -106,7 +113,10 @@ public class CreateContact extends AppCompatActivity {
                     if (image.getDrawable()!=null) {
                         BitmapDrawable drawable = (BitmapDrawable) image.getDrawable();
                         Bitmap bitmap = drawable.getBitmap();
-                        contact.setImage(bitmap);
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                        byte[] byteArray = stream.toByteArray();
+                        contact.setImage(byteArray);
                     }
 
                     //Start an intent to the main activity and pass the contact info through

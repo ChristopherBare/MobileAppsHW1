@@ -105,7 +105,8 @@
         android:text="@string/string_blank"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_url" />
+        app:layout_constraintTop_toBottomOf="@+id/label_url"
+        android:autoLink="web"/>
 
     <TextView
         android:id="@+id/label_address"
@@ -192,7 +193,8 @@
         android:layout_marginStart="8dp"
         android:text="@string/string_blank"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details_skype" />
+        app:layout_constraintTop_toBottomOf="@+id/details_skype"
+        android:autoLink="web"/>
 
     <TextView
         android:id="@+id/details_skype"
@@ -202,7 +204,8 @@
         android:layout_marginStart="8dp"
         android:text="@string/string_blank"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details_twitter" />
+        app:layout_constraintTop_toBottomOf="@+id/details_twitter"
+        android:autoLink="web"/>
 
     <TextView
         android:id="@+id/details_twitter"
@@ -212,7 +215,8 @@
         android:layout_marginStart="8dp"
         android:text="@string/string_blank"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details_facebook" />
+        app:layout_constraintTop_toBottomOf="@+id/details_facebook"
+        android:autoLink="web"/>
 
     <TextView
         android:id="@+id/details_facebook"
@@ -222,5 +226,6 @@
         android:layout_marginStart="8dp"
         android:text="@string/string_blank"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_links" />
+        app:layout_constraintTop_toBottomOf="@+id/label_links"
+        android:autoLink="web"/>
 </android.support.constraint.ConstraintLayout>
