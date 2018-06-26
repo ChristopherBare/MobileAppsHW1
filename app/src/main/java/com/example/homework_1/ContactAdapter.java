@@ -22,8 +22,8 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
         Contact contact = getItem(position);
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_contact_item, parent, false);
 
-        TextView item_name = convertView.findViewById(R.id.textViewName);
-        TextView item_phone = convertView.findViewById(R.id.textViewPhone);
+        TextView item_name = convertView.findViewById(R.id.item_name);
+        TextView item_phone = convertView.findViewById(R.id.item_phone);
 //        ImageView imageView = convertView.findViewById(R.id.item_image);
 
         //set the data from the contact object
