@@ -41,7 +41,9 @@
                 android:hint="@string/hint_first_name"
                 android:inputType="textPersonName"
                 tools:layout_editor_absoluteX="53dp"
-                tools:layout_editor_absoluteY="182dp" />
+                tools:layout_editor_absoluteY="182dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_last_name"
@@ -54,7 +56,9 @@
                 android:hint="@string/hint_last_name"
                 android:inputType="textPersonName"
                 tools:layout_editor_absoluteX="53dp"
-                tools:layout_editor_absoluteY="228dp" />
+                tools:layout_editor_absoluteY="228dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_phone"
@@ -65,7 +69,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_phone"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_company"
@@ -76,7 +82,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_company"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_email"
@@ -87,7 +95,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_url"
@@ -98,7 +108,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_url"
-                android:inputType="textUri" />
+                android:inputType="textUri"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_address"
@@ -109,7 +121,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_address"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_birthday"
@@ -120,7 +134,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_birthday"
-                android:inputType="date" />
+                android:inputType="date"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_nickname"
@@ -131,7 +147,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_nickname"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_Facebook"
@@ -142,7 +160,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_facebook"
-                android:inputType="textUri" />
+                android:inputType="textUri"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_Twitter"
@@ -153,7 +173,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_twitter"
-                android:inputType="textUri" />
+                android:inputType="textUri"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_Skype"
@@ -164,7 +186,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_skype"
-                android:inputType="textUri" />
+                android:inputType="textUri"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <EditText
                 android:id="@+id/edit_YouTube"
@@ -175,7 +199,9 @@
                 android:layout_marginRight="12dp"
                 android:ems="10"
                 android:hint="@string/hint_youtube"
-                android:inputType="textUri" />
+                android:inputType="textUri"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
             <Button
                 android:id="@+id/button_create"
@@ -185,7 +211,9 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="12dp"
-                android:text="@string/contact_save_string" />
+                android:text="@string/contact_save_string"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp" />
 
         </LinearLayout>
     </ScrollView>
