@@ -13,16 +13,18 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="1dp"
-        android:text="Name"
+        android:text="@string/name"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toEndOf="@+id/item_image"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="8dp" />
 
     <ImageView
         android:id="@+id/item_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/ic_person_black_24dp"
+        android:contentDescription="@string/PersonAvatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
         <!--app:srcCompat="@drawable/avatar_f_1" -->
@@ -35,7 +37,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="Phone"
+        android:text="@string/phone"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/item_image"
         app:layout_constraintTop_toBottomOf="@+id/item_name" />

@@ -21,6 +21,6 @@
     <string name="contact_save_string">Save</string>
     <string name="contactImage">contactImage</string>
     <string name="PersonAvatar">PersonAvatar</string>
-    <string name="phone">Phone</string>
     <string name="name">Name</string>
+    <string name="phone">Phone</string>
 </resources>
