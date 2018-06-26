@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Homework_1</string>
+    <string name="app_exit">Exit</string>
+    <string name="contact_create_string">Create New</string>
+    <string name="contact_edit_string">Edit Contact</string>
+    <string name="contact_delete_string">Delete Contact</string>
+    <string name="contact_display_string">Display Contacts</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_company">Company</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_url">URL</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_birthday">Birthday</string>
+    <string name="hint_nickname">Nickname</string>
+    <string name="hint_facebook">Facebook</string>
+    <string name="hint_twitter">Twitter</string>
+    <string name="hint_skype">Skype</string>
+    <string name="hint_youtube">YouTube</string>
+    <string name="contact_save_string">Save</string>
+</resources>
