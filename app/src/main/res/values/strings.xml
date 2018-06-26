@@ -23,4 +23,6 @@
     <string name="PersonAvatar">PersonAvatar</string>
     <string name="name">Name</string>
     <string name="phone">Phone</string>
+    <string name="placeholder_name">Contact Name</string>
+    <string name="placeholder_phone">(123) 456-7890</string>
 </resources>
