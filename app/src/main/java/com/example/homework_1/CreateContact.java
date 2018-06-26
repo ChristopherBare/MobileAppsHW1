@@ -23,7 +23,7 @@ public class CreateContact extends AppCompatActivity {
         setContentView(R.layout.activity_create_contact);
         setTitle("Create Contact");
 
-        findViewById(R.id.contact_create_button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.button_create).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -74,8 +74,8 @@ public class CreateContact extends AppCompatActivity {
                     intent.putExtra(MainActivity.CREATE_KEY, true);
                     startActivity(intent);
                 }
+                finish();
             }
         });
-        finish();
     }
 }

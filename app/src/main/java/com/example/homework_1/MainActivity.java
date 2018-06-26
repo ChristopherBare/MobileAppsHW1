@@ -3,6 +3,7 @@ package com.example.homework_1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -18,21 +19,25 @@ public class MainActivity extends AppCompatActivity {
     final static int DELETE_CODE = 2;
     final static int DISPLAY_CODE = 3;
 
-    ArrayList<Contact> contacts = new ArrayList<>();
+    static ArrayList<Contact> contacts = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("Contacts");
+        setTitle("Contacts (" + contacts.size() + ")");
 
         //Check to see if information is being sent
-        if(getIntent() != null && !getIntent().getExtras().isEmpty()){
+        if(getIntent() != null){
+            //Make sure the intent has extras before trying to access them
+            if (getIntent().getExtras() != null) {
 
-            //Contact is being created
-            if (getIntent().getExtras().getBoolean(MainActivity.CREATE_KEY) == true) {
-                Contact contact = (Contact) getIntent().getExtras().getSerializable(CreateContact.CONTACT_KEY);
-                contacts.add(contact);
+                //Contact is being created
+                if (getIntent().getExtras().getBoolean(MainActivity.CREATE_KEY) == true) {
+                    Contact contact = (Contact) getIntent().getExtras().getSerializable(CreateContact.CONTACT_KEY);
+                    contacts.add(contact);
+                    setTitle("Contacts (" + contacts.size() + ")");
+                }
             }
         }
 
@@ -44,7 +49,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, CREATE_CODE);
             }
         });
-
-
     }
 }
