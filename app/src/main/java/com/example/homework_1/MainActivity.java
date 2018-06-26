@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     final static int DELETE_CODE = 2;
     final static int DISPLAY_CODE = 3;
 
+    final static String CONTACT_KEY = "CONTACT";
     static ArrayList<Contact> contacts = new ArrayList<>();
     final static String CONTACTS_LIST_KEY = "CONTACTS";
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Contact is being created
                 if (getIntent().getExtras().getBoolean(MainActivity.CREATE_KEY) == true) {
-                    Contact contact = (Contact) getIntent().getExtras().getSerializable(CreateContact.CONTACT_KEY);
+                    Contact contact = (Contact) getIntent().getExtras().getSerializable(CONTACT_KEY);
                     contacts.add(contact);
                     setTitle("Contacts (" + contacts.size() + ")");
                 }

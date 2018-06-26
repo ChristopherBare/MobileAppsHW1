@@ -19,6 +19,19 @@ public class Contact implements Serializable {
     private String youtube;
 
     public Contact() {
+        this.firstName = "";
+        this.lastName = "";
+        this.phone = "";
+        this.company = "";
+        this.email = "";
+        this.url = "";
+        this.address = "";
+        this.birthday = "";
+        this.nickname = "";
+        this.facebook = "";
+        this.twitter = "";
+        this.skype = "";
+        this.youtube = "";
     }
 
     public Contact(String firstName, String lastName, String phone, String company, String email,
