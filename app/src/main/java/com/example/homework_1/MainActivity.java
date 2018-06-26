@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("Contacts (" + contacts.size() + ")");
+        setTitle("Contacts");
 
         if (contacts.size()==0) {
             Contact contact = new Contact();
@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
             contact2.setLastName("Bare");
             contact2.setPhone("(828) 781-4547");
             contacts.add(contact2);
-
-            setTitle("Contacts (" + MainActivity.contacts.size() + ")");
         }
 
         //Check to see if information is being sent
@@ -67,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Start an intent to the second activity and pass the student info through
                 Intent intent = new Intent(MainActivity.this, CreateContact.class);
-                startActivityForResult(intent, CREATE_CODE);
+//                startActivityForResult(intent, CREATE_CODE);
+                startActivity(intent);
             }
         });
 
@@ -78,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 //Start an intent to the second activity and pass the student info through
                 Intent intent = new Intent(MainActivity.this, DisplayContacts.class);
                 intent.putExtra(DELETE_KEY, true);
+//                startActivityForResult(intent, DELETE_CODE);
                 startActivity(intent);
             }
         });

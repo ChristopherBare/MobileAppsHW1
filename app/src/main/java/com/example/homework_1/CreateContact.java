@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class CreateContact extends AppCompatActivity {
 
-    static final String CONTACT_KEY = "CONTACT";
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
     private String firstNameString;
@@ -81,9 +80,9 @@ public class CreateContact extends AppCompatActivity {
 
 
 
-                    //Start an intent to the second activity and pass the student info through
+                    //Start an intent to the main activity and pass the contact info through
                     Intent intent = new Intent(CreateContact.this, MainActivity.class);
-                    intent.putExtra(CONTACT_KEY, contact);
+                    intent.putExtra(MainActivity.CONTACT_KEY, contact);
                     intent.putExtra(MainActivity.CREATE_KEY, true);
                     startActivity(intent);
                     finish();
@@ -95,7 +94,6 @@ public class CreateContact extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dispatchTakePictureIntent();
-
             }
         });
     }

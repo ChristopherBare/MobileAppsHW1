@@ -26,8 +26,7 @@ public class DisplayContacts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_contacts);
-        setTitle("Contacts (" + MainActivity.contacts.size() + ")");
-        Log.d("demo", "before adapter line");
+        setTitle("Contacts");
 
         adapter = new ContactAdapter(this, R.layout.activity_contact_item, contacts);
         itemList = findViewById(R.id.list_view_contacts);
@@ -52,9 +51,8 @@ public class DisplayContacts extends AppCompatActivity {
                         }
                     }
                 }
-                contacts.remove(toRemove);
+                MainActivity.contacts.remove(toRemove);
                 adapter.notifyDataSetChanged();
-                setTitle("Contacts (" + MainActivity.contacts.size() + ")");
             }
         });
     }
