@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        //Create new contact
         findViewById(R.id.contact_create_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Display contacts
         findViewById(R.id.contact_display_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Exit the app
         findViewById(R.id.app_exit_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
