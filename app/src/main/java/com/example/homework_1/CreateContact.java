@@ -3,6 +3,7 @@ package com.example.homework_1;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Camera;
+import android.graphics.drawable.BitmapDrawable;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,7 +30,8 @@ public class CreateContact extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_contact);
-        setTitle("Create Contact");
+        if (getIntent().getExtras()!=null && getIntent().getExtras().getBoolean(MainActivity.CREATE_KEY)) setTitle("Create Contact");
+        if (getIntent().getExtras()!=null && getIntent().getExtras().getBoolean(MainActivity.EDIT_KEY)) setTitle("Edit Contact");
 
         final EditText firstName = (EditText) findViewById(R.id.edit_first_name);
         final EditText lastName = (EditText) findViewById(R.id.edit_last_name);
@@ -61,6 +63,7 @@ public class CreateContact extends AppCompatActivity {
             twitter.setText(contact.getTwitter());
             skype.setText(contact.getSkype());
             youtube.setText(contact.getYoutube());
+            if(contact.getImage()!=null) image.setImageBitmap(contact.getImage());
 
             oldPhone = contact.getPhone();
         }
@@ -100,8 +103,11 @@ public class CreateContact extends AppCompatActivity {
                     if (!twitter.getText().toString().isEmpty()) contact.setTwitter(twitter.getText().toString());
                     if (!skype.getText().toString().isEmpty()) contact.setSkype(skype.getText().toString());
                     if (!youtube.getText().toString().isEmpty()) contact.setYoutube(youtube.getText().toString());
+                    if (image.getDrawable()!=null) {
+//                        contact.setImage(((BitmapDrawable)image.getDrawable()).getBitmap());
 
-
+//                        contact.setImage(bitmap);
+                    }
 
                     //Start an intent to the main activity and pass the contact info through
                     Intent intent = new Intent(CreateContact.this, MainActivity.class);

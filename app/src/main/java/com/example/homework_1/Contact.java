@@ -1,5 +1,7 @@
 package com.example.homework_1;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 public class Contact implements Serializable {
@@ -17,6 +19,7 @@ public class Contact implements Serializable {
     private String twitter;
     private String skype;
     private String youtube;
+    private Bitmap image;
 
     public Contact() {
         this.firstName = "";
@@ -32,11 +35,12 @@ public class Contact implements Serializable {
         this.twitter = "";
         this.skype = "";
         this.youtube = "";
+        this.image = null;
     }
 
     public Contact(String firstName, String lastName, String phone, String company, String email,
                    String url, String address, String birthday, String nickname, String facebook,
-                   String twitter, String skype, String youtube) {
+                   String twitter, String skype, String youtube, Bitmap image) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -50,6 +54,7 @@ public class Contact implements Serializable {
         this.twitter = twitter;
         this.skype = skype;
         this.youtube = youtube;
+        this.image = image;
     }
 
     public String getFirstName() {
@@ -155,4 +160,8 @@ public class Contact implements Serializable {
     public void setYoutube(String youtube) {
         this.youtube = youtube;
     }
+
+    public Bitmap getImage() { return image; }
+
+    public void setImage(Bitmap image) { this.image = image; }
 }

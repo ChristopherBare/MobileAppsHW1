@@ -24,10 +24,12 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
 
         TextView item_name = convertView.findViewById(R.id.item_name);
         TextView item_phone = convertView.findViewById(R.id.item_phone);
+        ImageView item_image = convertView.findViewById(R.id.item_image);
 
         //set the data from the contact object
         item_name.setText(contact.getFirstName() + " " + contact.getLastName());
         item_phone.setText(contact.getPhone());
+        item_image.setImageBitmap(contact.getImage());
 
         return convertView;
     }

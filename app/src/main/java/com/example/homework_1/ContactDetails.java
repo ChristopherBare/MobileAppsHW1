@@ -2,6 +2,7 @@ package com.example.homework_1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ContactDetails extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class ContactDetails extends AppCompatActivity {
             TextView twitter = (TextView) findViewById(R.id.details_twitter);
             TextView skype = (TextView) findViewById(R.id.details_skype);
             TextView youtube = (TextView) findViewById(R.id.details_youtube);
+            ImageView image = (ImageView) findViewById(R.id.details_image);
 
             name.setText(contact.getFirstName()+" "+contact.getLastName());
             phone.setText(contact.getPhone());
@@ -40,6 +42,7 @@ public class ContactDetails extends AppCompatActivity {
             twitter.setText(contact.getTwitter());
             skype.setText(contact.getSkype());
             youtube.setText(contact.getYoutube());
+            if (contact.getImage()!=null) image.setImageBitmap(contact.getImage());
         }
     }
 }
