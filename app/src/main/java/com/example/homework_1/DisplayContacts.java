@@ -19,7 +19,8 @@ public class DisplayContacts extends AppCompatActivity {
         setContentView(R.layout.activity_display_contacts);
         setTitle("Contacts (" + MainActivity.contacts.size() + ")");
 
-        adapter = new ArrayAdapter<Contact>(this, android.R.layout.simple_list_item_1, contacts);
+        adapter = new ContactAdapter(this, android.R.layout.activity_list_item, contacts);
+
 //        setListAdapter(adapter);
     }
 }
