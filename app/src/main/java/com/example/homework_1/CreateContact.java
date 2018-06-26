@@ -6,6 +6,7 @@ import android.graphics.Camera;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,6 +23,7 @@ public class CreateContact extends AppCompatActivity {
     private String oldPhone;
     private ImageView image;
     private Contact contact;
+    private String TAG = "debug";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +141,4 @@ public class CreateContact extends AppCompatActivity {
             image.setImageBitmap(imageBitmap);
         }
     }
-
-
 }
