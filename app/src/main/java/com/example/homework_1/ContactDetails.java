@@ -18,21 +18,24 @@ public class ContactDetails extends AppCompatActivity {
         if (getIntent() != null && getIntent().getExtras() != null) {
             Contact contact = (Contact) getIntent().getExtras().getSerializable(MainActivity.CONTACT_KEY);
 
-            TextView name = (TextView) findViewById(R.id.details_name);
-            TextView phone = (TextView) findViewById(R.id.details_phone);
-            TextView company = (TextView) findViewById(R.id.details_company);
-            TextView email = (TextView) findViewById(R.id.details_email);
-            TextView url = (TextView) findViewById(R.id.details_url);
-            TextView address = (TextView) findViewById(R.id.details_address);
-            TextView birthday = (TextView) findViewById(R.id.details_birthday);
-            TextView nickname = (TextView) findViewById(R.id.details_nickname);
-            TextView facebook = (TextView) findViewById(R.id.details_facebook);
-            TextView twitter = (TextView) findViewById(R.id.details_twitter);
-            TextView skype = (TextView) findViewById(R.id.details_skype);
-            TextView youtube = (TextView) findViewById(R.id.details_youtube);
-            ImageView image = (ImageView) findViewById(R.id.details_image);
+            //Get all 13 elements
+            TextView name = findViewById(R.id.details_name);
+            TextView phone = findViewById(R.id.details_phone);
+            TextView company = findViewById(R.id.details_company);
+            TextView email = findViewById(R.id.details_email);
+            TextView url = findViewById(R.id.details_url);
+            TextView address = findViewById(R.id.details_address);
+            TextView birthday = findViewById(R.id.details_birthday);
+            TextView nickname = findViewById(R.id.details_nickname);
+            TextView facebook = findViewById(R.id.details_facebook);
+            TextView twitter = findViewById(R.id.details_twitter);
+            TextView skype = findViewById(R.id.details_skype);
+            TextView youtube = findViewById(R.id.details_youtube);
+            ImageView image = findViewById(R.id.details_image);
 
-            name.setText(contact.getFirstName()+" "+contact.getLastName());
+            //Set all 13 elements
+            String nameString = contact.getFirstName()+" "+contact.getLastName();
+            name.setText(nameString);
             phone.setText(contact.getPhone());
             company.setText(contact.getCompany());
             email.setText(contact.getEmail());
