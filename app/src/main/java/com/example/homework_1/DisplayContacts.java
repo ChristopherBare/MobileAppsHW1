@@ -12,6 +12,7 @@ public class DisplayContacts extends AppCompatActivity {
 
     ArrayList<Contact> contacts = MainActivity.contacts;
     ArrayAdapter<Contact> adapter;
+    ListView itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,11 @@ public class DisplayContacts extends AppCompatActivity {
         setContentView(R.layout.activity_display_contacts);
         setTitle("Contacts (" + MainActivity.contacts.size() + ")");
 
-        adapter = new ContactAdapter(this, android.R.layout.activity_list_item, contacts);
+        adapter = new ContactAdapter(this, R.layout.activity_contact_item, contacts);
+        itemList.setAdapter(adapter);
+
+        adapter.addAll(contacts);
+        adapter.notifyDataSetChanged();
 
 //        setListAdapter(adapter);
     }
