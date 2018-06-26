@@ -87,7 +87,7 @@ public class CreateContact extends AppCompatActivity {
                     phoneString = phone.getText().toString();
 
                     //Create a contact object from the information gathered and set the required information
-                    Contact contact = new Contact();
+                    contact = new Contact();
                     contact.setFirstName(firstNameString);
                     contact.setLastName(lastNameString);
                     contact.setPhone(phoneString);
@@ -104,9 +104,9 @@ public class CreateContact extends AppCompatActivity {
                     if (!skype.getText().toString().isEmpty()) contact.setSkype(skype.getText().toString());
                     if (!youtube.getText().toString().isEmpty()) contact.setYoutube(youtube.getText().toString());
                     if (image.getDrawable()!=null) {
-//                        contact.setImage(((BitmapDrawable)image.getDrawable()).getBitmap());
-
-//                        contact.setImage(bitmap);
+                        BitmapDrawable drawable = (BitmapDrawable) image.getDrawable();
+                        Bitmap bitmap = drawable.getBitmap();
+                        contact.setImage(bitmap);
                     }
 
                     //Start an intent to the main activity and pass the contact info through
