@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Start an intent to the second activity and pass the student info through
                 Intent intent = new Intent(MainActivity.this, CreateContact.class);
-//                startActivityForResult(intent, CREATE_CODE);
+                intent.putExtra(CREATE_KEY, true);
                 startActivity(intent);
             }
         });
