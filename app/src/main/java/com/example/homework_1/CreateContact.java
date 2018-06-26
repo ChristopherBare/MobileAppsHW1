@@ -90,8 +90,15 @@ public class CreateContact extends AppCompatActivity {
                 }
             }
         });
-    }
 
+        findViewById(R.id.item_image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dispatchTakePictureIntent();
+
+            }
+        });
+    }
 
 
     private void dispatchTakePictureIntent() {
