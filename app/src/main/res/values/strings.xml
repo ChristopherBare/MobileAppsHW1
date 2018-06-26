@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Homework_1</string>
+    <string name="app_name">The Best Contact App</string>
     <string name="app_exit">Exit</string>
     <string name="contact_create_string">Create New</string>
     <string name="contact_edit_string">Edit Contact</string>
